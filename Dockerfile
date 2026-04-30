@@ -13,3 +13,15 @@ CMD ["/httpenv"]
 
 # comentario de prueba
 # otra prueba en branch
+
+#########################
+FROM base as test
+
+#layer test tools and assets on top as optional test stage
+RUN apk add --no-cache apache2-utils
+
+
+#########################
+FROM base as final
+
+# this layer gets built by default unless you set target to test
