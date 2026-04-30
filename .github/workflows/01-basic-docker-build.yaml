@@ -28,4 +28,5 @@ jobs:
         with:
           push: ${{ github.event_name != 'pull_request' }}
           tags: lcalerom/docker-ci-automation:latest,lcalerom/docker-ci-automation:01
-          
+          cache-from: type=gha
+          cache-to: type=gha,mode=max
